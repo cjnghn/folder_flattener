@@ -19,3 +19,10 @@ env_logger = "0.10"
 assert_cmd = "2.0"
 predicates = "3.0"
 tempfile = "3.5"
+
+[package.metadata.release]
+sign-commit = true
+sign-tag = true
+push = true
+publish = false
+pre-release-commit-message = "Release version {{version}}"
