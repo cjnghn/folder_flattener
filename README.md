@@ -15,7 +15,7 @@ With Folder Flattener, you can:
 
 - Flattens directory structures
 - Preserves original file paths (added as comments at the top of each file)
-- Ignores files/directories using a `.flatternignore` file
+- Ignores files/directories using a `.flattenerignore` file
 - Uses appropriate comment styles based on file types
 - Displays progress during operation
 
@@ -36,7 +36,7 @@ Options:
 
 ## Ignoring Files
 
-To ignore certain files or directories, create a `.flatternignore` file in your source directory. This file uses the same format as `.gitignore`. For example:
+To ignore certain files or directories, create a `.flattenerignore` file in your source directory. This file uses the same format as `.gitignore`. For example:
 
 ```
 # Ignore all .log files
@@ -47,6 +47,9 @@ node_modules/
 
 # Ignore a specific file
 secrets.txt
+
+# Don't ignore an important file
+!important.txt
 ```
 
 ## Example
@@ -55,7 +58,7 @@ secrets.txt
 folder-flattener -s ./my_project -o ./flattened_project
 ```
 
-This command flattens all files from the `my_project` directory into the `flattened_project` directory, ignoring any files or directories specified in `./my_project/.flatternignore` if it exists.
+This command flattens all files from the `my_project` directory into the `flattened_project` directory, ignoring any files or directories specified in `./my_project/.flattenerignore` if it exists.
 
 ## Contributing
 
