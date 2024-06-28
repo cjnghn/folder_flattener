@@ -5,7 +5,7 @@ use std::io::Write;
 use tempfile::TempDir;
 
 #[test]
-fn test_flatten_directory_success() {
+fn test_flatten_directory_success() {   // 테스트: 폴더 평탄화 성공
     let temp_dir = TempDir::new().unwrap();
     let source_dir = temp_dir.path().join("source");
     let output_dir = temp_dir.path().join("output");
@@ -42,7 +42,7 @@ fn test_flatten_directory_success() {
 }
 
 #[test]
-fn test_flatten_directory_with_ignore() {
+fn test_flatten_directory_with_ignore() {   // 테스트: 폴더 평탄화 무시 (.flattenerignore 파일 사용)
     let temp_dir = TempDir::new().unwrap();
     let source_dir = temp_dir.path().join("source");
     let output_dir = temp_dir.path().join("output");
@@ -80,7 +80,7 @@ fn test_flatten_directory_with_ignore() {
 }
 
 #[test]
-fn test_flatten_directory_nonexistent_source() {
+fn test_flatten_directory_nonexistent_source() { // 테스트: 존재하지 않는 소스 디렉토리
     let temp_dir = TempDir::new().unwrap();
     let source_dir = temp_dir.path().join("nonexistent");
     let output_dir = temp_dir.path().join("output");
@@ -94,7 +94,7 @@ fn test_flatten_directory_nonexistent_source() {
 }
 
 #[test]
-fn test_flatten_directory_output_exists() {
+fn test_flatten_directory_output_exists() { // 테스트: 출력 디렉토리가 이미 존재하는 경우
     let temp_dir = TempDir::new().unwrap();
     let source_dir = temp_dir.path().join("source");
     let output_dir = temp_dir.path().join("output");
