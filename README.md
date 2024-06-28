@@ -1,50 +1,51 @@
 # Folder Flattener
 
-A Rust CLI tool to flatten directory structures while preserving file paths.
+Folder Flattener is a CLI tool written in Rust that flattens directory structures while preserving original file paths.
 
-## Features
+## Why This Tool?
 
-- Flattens complex directory structures
-- Preserves original file paths as comments
-- Supports `.flattenerignore` for custom ignore patterns
-- Provides progress feedback
+This tool was primarily developed to address the lack of folder upload functionality in AI code assistant platforms like Claude projects. Many AI platforms don't yet support uploading entire folder structures, making it challenging for developers to share complete projects with AI assistants.
+
+With Folder Flattener, you can:
+1. Flatten complex project structures into a single directory.
+2. Preserve original file paths as comments at the top of each file, maintaining the relationship between files.
+3. Easily upload flattened projects to AI platforms, providing context for the entire codebase.
+
+## Key Features
+
+- Flattens directory structures
+- Preserves original file paths (added as comments at the top of each file)
+- Ignores files/directories using a `.flatternignore` file
+- Uses appropriate comment styles based on file types
+- Displays progress during operation
 
 ## Installation
 
-```
-git clone https://github.com/cjnghn/folder-flattener.git
-cd folder-flattener
-cargo build --release
-```
-
-The binary will be available at `./target/release/folder-flattener`
+(Add installation instructions here)
 
 ## Usage
 
-Basic usage:
 ```
-folder-flattener --source <SOURCE_DIR> --output <OUTPUT_DIR>
-```
-
-With a custom ignore file:
-```
-folder-flattener --source <SOURCE_DIR> --output <OUTPUT_DIR> --ignore-file <IGNORE_FILE>
+folder-flattener -s <source_directory> -o <output_directory> [-i <ignore_file>]
 ```
 
-### .flattenerignore
+Options:
+- `-s, --source`: Source directory to flatten
+- `-o, --output`: Output directory for flattened files
+- `-i, --ignore-file`: (Optional) Path to a file containing patterns to ignore
 
-Create a `.flattenerignore` file in your source directory to specify ignore patterns:
+## Example
 
+```bash
+folder-flattener -s ./my_project -o ./flattened_project
 ```
-*.log
-node_modules/
-secrets.txt
-```
+
+This command flattens all files from the `my_project` directory into the `flattened_project` directory.
 
 ## Contributing
 
-Contributions are welcome. Please open an issue or submit a pull request.
+Contributions are welcome! If you'd like to contribute, please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
