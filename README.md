@@ -26,13 +26,28 @@ With Folder Flattener, you can:
 ## Usage
 
 ```
-folder-flattener -s <source_directory> -o <output_directory> [-i <ignore_file>]
+folder-flattener -s <source_directory> -o <output_directory>
 ```
 
 Options:
 - `-s, --source`: Source directory to flatten
 - `-o, --output`: Output directory for flattened files
-- `-i, --ignore-file`: (Optional) Path to a file containing patterns to ignore
+- `-v, --verbose`: Increase verbosity (can be used multiple times, e.g., -v, -vv, -vvv)
+
+## Ignoring Files
+
+To ignore certain files or directories, create a `.flatternignore` file in your source directory. This file uses the same format as `.gitignore`. For example:
+
+```
+# Ignore all .log files
+*.log
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore a specific file
+secrets.txt
+```
 
 ## Example
 
@@ -40,7 +55,7 @@ Options:
 folder-flattener -s ./my_project -o ./flattened_project
 ```
 
-This command flattens all files from the `my_project` directory into the `flattened_project` directory.
+This command flattens all files from the `my_project` directory into the `flattened_project` directory, ignoring any files or directories specified in `./my_project/.flatternignore` if it exists.
 
 ## Contributing
 

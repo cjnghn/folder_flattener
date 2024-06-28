@@ -11,10 +11,6 @@ pub struct Cli {
     #[arg(short, long)]
     pub output: String,
 
-    /// Optional path to ignore file
-    #[arg(short, long)]
-    pub ignore_file: Option<String>,
-
     /// Verbose mode (-v, -vv, -vvv)
     #[arg(short, long, action = clap::ArgAction::Count)]
     pub verbose: u8,
